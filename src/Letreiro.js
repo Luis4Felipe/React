@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from 'react';
 
 function Letreiro() {
-  const texto = "Conheça a Fatec! ";
-  const [digitacao, setDigitacao] = useState('');
-  const [indice, setIndice] = useState(0);
+  const [texto, setTexto] = useState('');
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    const intervalo = setInterval(() => {
-      // Atualiza o estado da digitação adicionando uma letra ao texto
-      setDigitacao(texto.substring(0, indice + 1));
-      // Incrementa o índice para avançar na próxima letra
-      setIndice((prevIndice) => (prevIndice + 1) % texto.length);
-    }, 400);
+    const animarTexto = () => {
+      const textoCompleto = 'Conheça a Fatec';
+      if (index < textoCompleto.length) {
+        setTexto(texto + textoCompleto[index]);
+        setIndex(index + 1);
+      } else {
+        setTexto('');
+        setIndex(0);
+      }
+    };
 
-    // Limpa o intervalo quando o componente é desmontado
-    return () => clearInterval(intervalo);
-  }, []); // Executa apenas uma vez ao montar o componente
+    const timerID = setInterval(() => {
+      animarTexto();
+    }, 100);
 
-  return (
-    <div>
-      <h1>{digitacao}</h1>
-    </div>
-  );
+    return () => clearInterval(timerID);
+  }, [index, texto]);
+
+  return <div>{texto}</div>;
 }
 
 export default Letreiro;
+
 
 
 
