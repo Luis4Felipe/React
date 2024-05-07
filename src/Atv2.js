@@ -1,6 +1,6 @@
-import { React } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Contador } from './Contador'
+import Contador from './Contador';
 
 
 export default function Atv2() {

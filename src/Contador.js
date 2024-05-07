@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import homemIMG from './download1.png';
+import mulherIMG from './download3.png';
 
 function Contador() {
   const [totalHomens, setTotalHomens] = useState(0);
@@ -27,7 +29,7 @@ function Contador() {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', textAlign: 'center', marginTop: '50px', border: '2px solid #333', borderRadius: '10px', padding: '20px', width: '300px', margin: '0 auto' }}>
       <div>
-        <img src="download1.png" alt="Imagem de homem" width="200" />
+        <img src={homemIMG} alt="Imagem de homem" width="200" />
         <div>
           <h3>Homens: {totalHomens}</h3>
           <button onClick={adicionarHomem} style={{ padding: '5px 10px', margin: '5px' }}>Adicionar Homem</button>
@@ -35,7 +37,7 @@ function Contador() {
         </div>
       </div>
       <div>
-        <img src="download3.png" alt="Imagem de mulher" width="200" />
+        <img src={mulherIMG} alt="Imagem de mulher" width="200" />
         <div>
           <h3>Mulheres: {totalMulheres}</h3>
           <button onClick={adicionarMulher} style={{ padding: '5px 10px', margin: '5px' }}>Adicionar Mulher</button>
