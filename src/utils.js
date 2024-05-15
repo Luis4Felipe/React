@@ -9,11 +9,10 @@ export function getImageUrl(person, size = 's'){
     );
 }
 
-export function getImageUrl(person){
+export function getImageUrl2(person){
     return(
         'https://i.imgur.com/MK3eW3As.jpg' +
         person.imageId +
-        size +
         '.jpg'
 
     );

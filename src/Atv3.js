@@ -4,6 +4,9 @@ import Gallery from './Gallery.js';
 import TodoList from './TodoList.js';
 import Avatar from './Avatar.js';
 import Item from './Item.js';
+import List from './List.js';
+import Recipe from './Recipe.js';
+import Cup from './Cup.js';
 
 
 export default function Atv3() {
@@ -22,11 +25,11 @@ export default function Atv3() {
     />
     </Card>
     <Item />
-
+    <List />
+    <Recipe />
+    <Cup />
     <Link to="/">Voltar</Link>
     </>
-
-
   );
 }
 
